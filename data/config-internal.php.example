@@ -1,0 +1,53 @@
+<?php
+/**
+ * EspoCRM Internal Configuration File Template
+ * 
+ * Инструкция:
+ * 1. Скопируйте этот файл и переименуйте в config-internal.php
+ * 2. ОБЯЗАТЕЛЬНО настройте параметры подключения к базе данных
+ * 3. Сгенерируйте новые ключи безопасности (cryptKey и hashSecretKey)
+ */
+
+return [
+  'database' => [
+    'host' => '127.0.0.1',
+    'port' => '3306',
+    'charset' => NULL,
+    'dbname' => 'your_database_name',  // ИЗМЕНИТЕ: название вашей БД
+    'user' => 'your_database_user',     // ИЗМЕНИТЕ: пользователь БД
+    'password' => 'your_database_password', // ИЗМЕНИТЕ: пароль БД
+    'platform' => 'Mysql'
+  ],
+  'smtpPassword' => NULL,
+  'logger' => [
+    'path' => 'data/logs/espo.log',
+    'level' => 'WARNING',
+    'rotation' => true,
+    'maxFileNumber' => 30,
+    'printTrace' => false,
+    'databaseHandler' => false,
+    'sql' => false,
+    'sqlFailed' => false
+  ],
+  'restrictedMode' => false,
+  'cleanupAppLog' => true,
+  'cleanupAppLogPeriod' => '30 days',
+  'webSocketMessager' => 'ZeroMQ',
+  'clientSecurityHeadersDisabled' => false,
+  'clientCspDisabled' => false,
+  'clientCspScriptSourceList' => [
+    0 => 'https://maps.googleapis.com'
+  ],
+  'adminUpgradeDisabled' => false,
+  'isInstalled' => true,
+  
+  // ВАЖНО: Сгенерируйте случайные строки (32 символа)
+  // Используйте: bin2hex(random_bytes(16))
+  'cryptKey' => 'GENERATE_RANDOM_32_CHAR_STRING_HERE',
+  'hashSecretKey' => 'GENERATE_RANDOM_32_CHAR_STRING_HERE',
+  
+  'defaultPermissions' => [
+    'user' => 10000,
+    'group' => 1005
+  ],
+];

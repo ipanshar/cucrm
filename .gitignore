@@ -1,0 +1,84 @@
+# EspoCRM .gitignore
+
+# Конфигурационные файлы с чувствительными данными
+/data/config.php
+/data/config-internal.php
+.env
+
+# НО сохраняем шаблоны конфигурации
+!/data/config.php.example
+!/data/config-internal.php.example
+!.env.example
+
+# Кэш и временные файлы
+/data/cache/
+/data/tmp/
+/data/logs/
+/data/.data
+
+# Загруженные файлы
+/data/upload/
+
+# Собственные расширения и кастомизации (опционально, раскомментируйте если хотите сохранить в репозитории)
+# /custom/
+
+# Vendor зависимости (устанавливаются через composer)
+/vendor/
+
+# Директория установки
+/install/
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Системные файлы Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Логи
+*.log
+
+# Временные файлы PHP
+*.tmp
+
+# Резервные копии
+*.bak
+*.backup
+*.old
+
+# Node modules (если используются)
+node_modules/
+
+# Composer lock (опционально, можно сохранять для фиксации версий)
+# composer.lock
+
+# Специфичные для OSPanel/локальной разработки
+/git/
+/html/
+
+# Preload файл (кэш)
+/preload.php
+
+# Публичные файлы (генерируются автоматически)
+/public/client/
+/public/custom/
+
+# Сертификаты и ключи
+*.pem
+*.key
+*.crt
+*.cert
+
+# Дампы БД
+*.sql
+*.sql.gz
+*.dump
+
+# ВАЖНО: Шаблоны конфигурации (.example) ВКЛЮЧЕНЫ в репозиторий
+# Для разворачивания проекта смотрите README.md или используйте setup.bat (Windows) / setup.sh (Linux/Mac)
