@@ -1,0 +1,88 @@
+{
+    "name": "espocrm/espocrm",
+    "description": "EspoCRM - Open Source CRM Application",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-zip": "*",
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "ext-imap": "*",
+        "ext-curl": "*",
+        "ext-xml": "*",
+        "ext-xmlwriter": "*",
+        "async-aws/core": "^1.23",
+        "async-aws/ses": "^1.7",
+        "brick/phonenumber": "^0.6.0",
+        "doctrine/dbal": "^3.6",
+        "dompdf/dompdf": "^2.0",
+        "egulias/email-validator": "^4.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "laminas/laminas-ldap": "^2.16",
+        "laminas/laminas-mail": "^2.22",
+        "league/oauth2-client": "^2.7",
+        "markbaker/matrix": "^3.0",
+        "michelf/php-markdown": "^2.0",
+        "monolog/monolog": "^3.3",
+        "nikic/fast-route": "^1.3",
+        "openspout/openspout": "^4.21",
+        "php-di/php-di": "^7.0",
+        "phpoffice/phpspreadsheet": "^1.28",
+        "psr/http-message": "^1.0 || ^2.0",
+        "psr/log": "^3.0",
+        "ratchet/rfc6455": "^0.3.1",
+        "react/zmq": "^0.4.0 || ^0.5.0",
+        "slim/slim": "^4.11",
+        "spatie/async": "^1.6",
+        "symfony/console": "^6.2",
+        "symfony/http-client": "^6.2",
+        "symfony/polyfill-intl-idn": "^1.27"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Espo\\": "application/Espo/"
+        },
+        "classmap": [
+            "application/Espo/Modules/",
+            "custom/Espo/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php rebuild.php"
+        ],
+        "post-update-cmd": [
+            "@php rebuild.php"
+        ],
+        "espo:clear-cache": [
+            "@php clear_cache.php"
+        ],
+        "espo:rebuild": [
+            "@php rebuild.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        },
+        "platform": {
+            "php": "8.0"
+        }
+    }
+}
