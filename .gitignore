@@ -61,10 +61,10 @@ node_modules/
 
 # Специфичные для OSPanel/локальной разработки
 /git/
-/html/
+#/html/
 
 # Preload файл (кэш)
-/preload.php
+#/preload.php
 
 # Публичные файлы (генерируются автоматически)
 /public/client/
